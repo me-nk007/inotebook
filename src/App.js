@@ -9,13 +9,14 @@ import {
   // Link
 } from "react-router-dom";
 import NoteState from './context/notes/NoteState';
-
+import Alert from './components/Alert';
 function App() {
   return (
     <>
     <NoteState>
     <Router>
       <Navbar/>
+      <Alert message="Baad me set karunga"/>
       <div className="container">
 
       <Routes>
