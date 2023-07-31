@@ -1,23 +1,25 @@
-import React, { useState } from "react";
+import React  from "react";
 import NoteContext from "./noteContext";
+import { useState } from "react";
 
 
 const NoteState = (props)=>{
-        const s1 = {
-            "name": "Harry",
-            "class": "5b"
+    const notesInitial = [
+        {
+          "_id": "64c6517d2cd9fdba1facbccf",
+          "user": "64c549358ac9c02d91474618",
+          "title": "My Title",
+          "description": "Please wake up early",
+          "tag": "personal",
+          "date": "2023-07-30T12:03:09.258Z",
+          "__v": 0
         }
-        const [state, setstate] = useState(s1);          // Changing the state using useState
-       const update = ()=>{
-            setTimeout(() => {
-                setstate({                               
-                    "name": "Nishant",
-                    "class": "Computer Engineering"
-                })
-            }, 1000);
-        }
+      ]
+      const [notes, setNotes] = useState(notesInitial);
+   
+        
     return (
-        <NoteContext.Provider value={{state:state, update:update}}>
+        <NoteContext.Provider value={{notes,setNotes}}>
             {props.children}
         </NoteContext.Provider>
     )
