@@ -6,7 +6,7 @@ import { useState } from "react";
 const NoteState = (props)=>{
     const notesInitial = [
         {
-          "_id": "64c6517d2cd9fdba1facbccfa",
+          "_id": "123",
           "user": "64c549358ac9c02d91474618h",
           "title": "My Title",
           "description": "Please wake up early",
@@ -15,7 +15,7 @@ const NoteState = (props)=>{
           "__v": 0
         },
         {
-            "_id": "64c7c6dfba78a66aefbd0db9b",
+            "_id": "234",
             "user": "64c549358ac9c02d91474618g",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -24,7 +24,7 @@ const NoteState = (props)=>{
             "__v": 0
           },
           {
-            "_id": "64c7c6dfba78a66aefbd0db9c",
+            "_id": "456",
             "user": "64c549358ac9c02d91474618f",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -33,7 +33,7 @@ const NoteState = (props)=>{
             "__v": 0
           },
           {
-            "_id": "64c7c6dfba78a66aefbd0db9d",
+            "_id": "678",
             "user": "64c549358ac9c02d91474618e",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -42,7 +42,7 @@ const NoteState = (props)=>{
             "__v": 0
           },
           {
-            "_id": "64c7c6dfba78a66aefbd0db9e",
+            "_id": "789",
             "user": "64c549358ac9c02d91474618d",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -51,7 +51,7 @@ const NoteState = (props)=>{
             "__v": 0
           },
           {
-            "_id": "64c7c6dfba78a66aefbd0db9f",
+            "_id": "891",
             "user": "64c549358ac9c02d91474618c",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -60,7 +60,7 @@ const NoteState = (props)=>{
             "__v": 0
           },
           {
-            "_id": "64c7c6dfba78a66aefbd0db9g",
+            "_id": "892",
             "user": "64c549358ac9c02d91474618b",
             "title": "Second Note",
             "description": "Please access the datbase",
@@ -78,7 +78,7 @@ const NoteState = (props)=>{
           // TODO : API Call
           console.log("Adding a New Note");
           const note = {
-            "_id": "64c7c6dfba78a66aefbd0db9hi",
+            "_id": "893",
             "user": "64c549358ac9c02d91474618a",
             "title": title,
             "description": description,
@@ -93,15 +93,22 @@ const NoteState = (props)=>{
 
 
        // Delete a Note
-       const deleteNote = ()=>{
-          
+       const deleteNote = (id)=>{
+        // TODO : API Call
+          console.log('Deleting the note with id' + id);
+          const newNotes = notes.filter((note)=>{ return note._id !== id})
+          setNotes(newNotes) 
        }
 
 
 
        // Edit a Note
-       const editNote = ()=>{
-          
+       const editNote = (id, title, description, tag)=>{
+          for (let index = 0; index < notes.length; index++) {
+            const element = notes[index];
+            if(element._id === id)
+
+          }
        }
 
 
