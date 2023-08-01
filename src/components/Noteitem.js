@@ -6,7 +6,7 @@ const context = useContext(noteContext);
 
 
    const {deleteNote} = context;
-   const {note} = props;
+   const {note, updateNote} = props;
    const myStyle = {
     color: '#ed0202'
    }
@@ -21,7 +21,7 @@ const context = useContext(noteContext);
             <p className="card-text my-3">{note.description}</p>
             <div className="d-flex justify-content-between my-3">
             <i className="fa-solid fa-trash fa-xl mx-2" style={myStyle} onClick={()=>{deleteNote(note._id)}} ></i>
-            <i className="fa-solid fa-pen-to-square fa-xl mx-2" style={yourStyle}></i>
+            <i className="fa-solid fa-pen-to-square fa-xl mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style={yourStyle} onClick={()=>{updateNote(note)}}></i>
             </div>
            
              </div>
