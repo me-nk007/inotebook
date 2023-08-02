@@ -1,14 +1,22 @@
 import React, { useContext, useEffect, useRef,useState } from 'react';import noteContext from "../context/notes/noteContext"
-
+import { useNavigate} from 'react-router-dom'
 import Noteitem from './Noteitem';
 import AddNote from './AddNote';
 
 
 const Notes = (props) => {
   const context = useContext(noteContext);
+  let navigate = useNavigate();
   const { notes, getNotes, editNote } = context;
   useEffect(() => {
-    getNotes();
+    if(localStorage.getItem('token')){
+      // console.log("It is working");
+      getNotes();
+    }
+    else{
+      // console.log("It is not working");
+      navigate("/login")
+    }
     // eslint-disable-next-line
   }, []);
 
@@ -73,6 +81,7 @@ const Notes = (props) => {
           </div>
         </div>
       </div>
+      <hr />
       <div className="row my-3">
         <h2>Your Notes</h2>
         <div className="container mx-2">
