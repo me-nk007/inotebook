@@ -1,9 +1,8 @@
 import React, {useState} from 'react';
-import {useHistory, useNavigate} from 'react-router-dom'
+import { useNavigate} from 'react-router-dom'
 
 const Login = () => {
     const [credentials, setCredentials] = useState({email: "",password:""});
-    // let history = useHistory();
     let navigate = useNavigate();
 
     const handleSubmit = async (e)=>{
